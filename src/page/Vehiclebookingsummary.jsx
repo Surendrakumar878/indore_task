@@ -4,7 +4,7 @@ import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
 
-const Report5 = () => {
+const Vehiclebookingsummary= () => {
     
         const conponentPDF= useRef();
         const [userData, setUserdata]= useState([]);
@@ -34,7 +34,7 @@ const Report5 = () => {
                       
                     
                    <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2 h-96 border-black ">
-                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  vehicle scheduled summary </div> 
+                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">   Vehicle booking summary </div> 
                     <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
 
                     
@@ -43,14 +43,18 @@ const Report5 = () => {
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
                             <th className=" text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> schedule  date/time</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">user id</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">username</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">registered number</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle no scheduled </th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">current status </th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">booking  date/time</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">user id</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> username</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">registerd no</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle no booked</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle owner id </th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle owner name </th>
                             <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">freight</th>
-                         
+                            {/* <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Registration date</th> */}
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">from station </th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">to station</th>
+                      
                             </tr> 
                         </thead>
                         <tbody>
@@ -58,15 +62,17 @@ const Report5 = () => {
                                 userData.map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.schedule_date_time}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.booking_date_time}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_id}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.username}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registered_number}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_no_scheduled}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.current_status}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registerd_no}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_no_booked}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_owner_id}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_owner_name}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.freight}</td>
-                             
-                           
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.from_station}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.to_station}</td>
+                                {/* <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.goodsname}</td>to statio */}
                                 <td>
                                     {/* <Link to="/userEdit" className="btn btn-success mx-2">Edit</Link>
                                     <Link to="/userDelete" className="btn btn-danger">Delete</Link> */}
@@ -80,11 +86,11 @@ const Report5 = () => {
 <img className="w-full" src="transduniyalogo.png" alt="" />
 
 </div>
-</div>
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
 </div>
+</div>
                     <div className="d-grid d-md-flex justify-content-md-end mb-3" >
-                    <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
+                    <button className="btn btn-success bg-blue-400 py-3 px-2 w-28 text-xl mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
                     </div> 
                     </div>
                 </div>
@@ -94,4 +100,4 @@ const Report5 = () => {
   )
 }
 
-export default Report5
+export default Vehiclebookingsummary

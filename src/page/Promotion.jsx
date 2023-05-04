@@ -7,68 +7,20 @@ import { UploadOutlined } from '@ant-design/icons';
 import './Register.css'
 // import logo from '../../../assets/image/transduniyalogofinal.png'
 import TextArea from 'antd/es/input/TextArea';
-
+import n from "./Promotion.module.css"
 const { Option } = Select;
 
 const Promotion = () => {
   const navigate = useNavigate();
   const [verfied, setVerifed] = useState(false);
-  const [country, setCountry] = useState([]);
-  const [state, setState] = useState([]);
-  const [city, setCity] = useState([]);
-  const [register, SetRegisterNumber] = useState([]);
-  const [required, Setrequired] = useState(false);
-  const [open, setOpen] = useState(false);
+ 
   useEffect(() => {
     // getCountryName()
 
   }, [])
-  // const getCountryName = async () => {
-
-  //   const country_response = await GetCountryName()
-  //   if (country_response) {
-  //     setCountry(country_response)
-  //   }
-  // }
+ 
 
 
-  // const getStateName = async (state) => {
-  //   const state_data = {
-  //     id: state
-  //   }
-  //   const state_name = await GetStateName(state_data)
-  //   if (state_name) {
-  //     setState(state_name)
-  //   }
-
-  // }
-
-  // const getCityName = async (city) => {
-  //   const city_data = {
-  //     id: city
-  //   }
-  //   const city_name = await GetCityName(city_data)
-
-  //   if (city_name) {
-  //     setCity(city_name)
-  //   }
-
-  // }
-  // const registerationNumberValidation = async (e) => {
-  //   SetRegisterNumber("")
-  //   Setrequired(false)
-  //   const number_check = {
-  //     register_number: e.target.value
-  //   }
-  //   const number_response = await RegisterationNumberValidationName(number_check)
-
-  //   if (number_response.msg === "Registration Number Already Exist") {
-  //     alert("Registration Number Already Exist")
-  //     SetRegisterNumber(number_response.msg)
-  //     Setrequired(true)
-  //   }
-
-  // }
   function onChange() {
     setVerifed(true);
   }
@@ -191,7 +143,6 @@ const Promotion = () => {
     console.log(reg_data)
     
   };
-   
 
 
   const handlePhoneKeyPress = (e) => {
@@ -209,18 +160,19 @@ const Promotion = () => {
     }
   };
 
+  
   return (
     <>
-      <h2 id='heading'>Promotion BY ADMIN</h2>
+      <h2 id={n.heading}>Promotion BY ADMIN</h2>
       <div className='mainForm'>
-       
+        
         <Card hoverable bodyStyle={{ padding: "0" }} >
         
           <Form layout="vertical" autoComplete="off" onFinish={saveData} >
 
 
-            <h3 className='card_menu'>Promotion TYPE</h3>
-            <Form.Item name="user_type_id"
+            <h3 className={n.card_menu}>Promotion TYPE</h3>
+            <Form.Item name="type_id"
               rules={[
                 {
                   required: true,
@@ -240,15 +192,15 @@ const Promotion = () => {
               </Radio.Group>
             </Form.Item>
 
-            <h3 className='card_menu'>Promotion </h3>
+            <h3 className={n.card_menu}>Promotion </h3>
             <Row>
-            <Col className="select_option_col">
-            <Form.Item name="company_name"
+            <Col className={n.select_option_col}>
+            <Form.Item name="Promotion_id"
                 label={<lable style={{ fontSize: "15px" }}>Promotion id</lable>}
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Transporter Name!"
+                    message: "Please input your Promotion_id !"
                   }
                 ]}
                 style={{  width: "96%" }}
@@ -256,16 +208,16 @@ const Promotion = () => {
 
               >
                 {/* <Tooltip title="Enter Your Comapny Name"> */}
-                <Input placeholder='ABC Transports' tabIndex={1} />
+                <Input placeholder='Promotion_id' tabIndex={1} />
                 {/* </Tooltip> */}
 
               </Form.Item>
             </Col>
 
 
-            <Col className="select_option_col">
+            <Col className={n.select_option_col}>
               <Form.Item
-                  name="Enq Date"
+                  name="Promotion_date_time"
                   label={<label style={{ fontSize: "15px" }}>Promotion Date/time</label>}
                   rules={[
                     {
@@ -279,7 +231,7 @@ const Promotion = () => {
                   <DatePicker
                     className="w-full"
                     showTime
-                    placeholder="Select Time"
+                    placeholder=" Time"
                     onChange={onChange}
                     // onOk={onOk}
                   />
@@ -289,12 +241,12 @@ const Promotion = () => {
               </Col>
             </Row>
             <Row>
-              <Form.Item name="address"
+              <Form.Item name="Promotion_messages"
                 label={<label style={{ fontSize: "15px" }}>Promotion Messages</label>}
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Messages!"
+                    message: "Please input your Promotion Messages!"
                   }
                 ]}
                 hasFeedback
@@ -302,7 +254,7 @@ const Promotion = () => {
                 style={{ paddingLeft: "20px", width: "96%" }}
               >
                 {/* <Tooltip title="Enter Your Address" > */}
-                <TextArea placeholder='Messages' tabIndex={2} />
+                <TextArea placeholder='Promotion Messages' tabIndex={2} />
                 {/* </Tooltip> */}
               </Form.Item>
             </Row>
@@ -320,14 +272,14 @@ const Promotion = () => {
             <Row>
               <Col className='upload_col'>
                 <Form.Item
-                  name="company_registeration"
+                  name="image1"
 
                   label={<label style={{ fontSize: "15px" }}> Image1 </label>}
                   getValueFromEvent={({ file }) => file.originFileObj}
                   rules={[
                     {
                       required: true,
-                      message: "Company Registration!"
+                      message: "image1!"
                     }
                   ]}
                   hasFeedback
@@ -341,13 +293,13 @@ const Promotion = () => {
 
               <Col className='upload_col'>
                 <Form.Item
-                  name="owner_aadhar_card"
+                  name="image2"
                   label={<label style={{ fontSize: "15px" }}>Image2</label>}
                   getValueFromEvent={({ file }) => file.originFileObj}
                   rules={[
                     {
                       required: true,
-                      message: "Owner Aadhar Card!"
+                      message: "image2!"
                     }
                   ]}
                   hasFeedback
@@ -361,12 +313,12 @@ const Promotion = () => {
 
               <Col className='upload_col'>
                 <Form.Item
-                  name="company_visiting_card"
-                  label={<label style={{ fontSize: "15px" }}>PDF</label>}
+                  name="pdf1"
+                  label={<label style={{ fontSize: "15px" }}>PDF1</label>}
                   rules={[
                     {
                       required: true,
-                      message: "Company Visiting Card!"
+                      message: "PDF!"
                     }
                   ]}
                   hasFeedback
@@ -378,23 +330,41 @@ const Promotion = () => {
                 </Form.Item>
               </Col>
 
-              
+              <Col className='upload_col'>
+                <Form.Item
+                  name="pdf2"
+                  label={<label style={{ fontSize: "15px" }}>PDF2</label>}
+                  rules={[
+                    {
+                      required: true,
+                      message: "PDF!"
+                    }
+                  ]}
+                  hasFeedback
+                  getValueFromEvent={({ file }) => file.originFileObj}
+                >
+                  <Upload {...fileProps4} className="uploadField">
+                    <Button icon={<UploadOutlined />} tabIndex={19}>Click to Upload</Button>
+                  </Upload>
+                </Form.Item>
+              </Col>
             </Row>
             <div className='center'>
 
               <Row>
-                <Form.Item>
-                  <Button htmlType='submit'
-                    disabled={!verfied}
-                    style={{
+              <Form.Item className="w-40 m-auto pb-4">
+                <button
+                      type="submit"
+                      // disabled={!verfied}
+                      style={{
+                        marginTop: "20px",
 
-                      marginTop: "20px",
-                      marginLeft: "50px",
-
-
-                    }}
-                    className="button"
-                  >Submit</Button>
+                        
+                      }}
+                      className="button m-auto w-40 bg-blue-400 rounded-lg p-2 text-white hover:text-white "
+                    >
+                      Submit
+                    </button>
                 </Form.Item>
               </Row>
             </div>

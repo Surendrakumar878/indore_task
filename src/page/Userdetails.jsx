@@ -4,7 +4,7 @@ import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
 
-const Report1 = () => {
+const Userdetails = () => {
     
         const conponentPDF= useRef();
         const [userData, setUserdata]= useState([]);
@@ -99,4 +99,4 @@ const Report1 = () => {
   )
 }
 
-export default Report1
+export default Userdetails

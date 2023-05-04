@@ -4,7 +4,7 @@ import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
 
-const Report4= () => {
+const Overallwallet = () => {
     
         const conponentPDF= useRef();
         const [userData, setUserdata]= useState([]);
@@ -34,7 +34,7 @@ const Report4= () => {
                       
                     
                    <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2 h-96 border-black ">
-                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">   Vehicle booking summary </div> 
+                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Overall wallet summary: </div> 
                     <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
 
                     
@@ -43,18 +43,14 @@ const Report4= () => {
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
                             <th className=" text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">booking  date/time</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">user id</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> username</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">registerd no</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle no booked</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle owner id </th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle owner name </th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">freight</th>
-                            {/* <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Registration date</th> */}
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">from station </th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">to station</th>
-                      
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">user id</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">username</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">refill date/time</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> refill amount</th>
+                            {/* <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">refill amount </th> */}
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">refilled by </th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">current balance</th>
+                          
                             </tr> 
                         </thead>
                         <tbody>
@@ -62,17 +58,13 @@ const Report4= () => {
                                 userData.map( (uData, index)=>(
                                  <tr key={index}>
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.booking_date_time}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_id}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.username}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.registerd_no}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_no_booked}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_owner_id}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.vehicle_owner_name}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.freight}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.from_station}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.to_station}</td>
-                                {/* <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.goodsname}</td>to statio */}
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.refill_date_time}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.refill_amount}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.refilled_by}</td>
+                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.current_balance}</td>
+                              
                                 <td>
                                     {/* <Link to="/userEdit" className="btn btn-success mx-2">Edit</Link>
                                     <Link to="/userDelete" className="btn btn-danger">Delete</Link> */}
@@ -100,4 +92,4 @@ const Report4= () => {
   )
 }
 
-export default Report4
+export default Overallwallet

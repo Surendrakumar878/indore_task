@@ -7,7 +7,7 @@ import { UploadOutlined } from '@ant-design/icons';
 import './Register.css'
 // import logo from '../../../assets/image/transduniyalogofinal.png'
 import TextArea from 'antd/es/input/TextArea';
-
+import n from "./Notification.module.css"
 const { Option } = Select;
 
 const Notification = () => {
@@ -163,7 +163,7 @@ const Notification = () => {
   
   return (
     <>
-      <h2 id='heading'>Notification BY ADMIN</h2>
+      <h2 id={n.heading}>Notification BY ADMIN</h2>
       <div className='mainForm'>
         
         <Card hoverable bodyStyle={{ padding: "0" }} >
@@ -171,7 +171,7 @@ const Notification = () => {
           <Form layout="vertical" autoComplete="off" onFinish={saveData} >
 
 
-            <h3 className='card_menu'>Notification TYPE</h3>
+            <h3 className={n.card_menu}>Notification TYPE</h3>
             <Form.Item name="type_id"
               rules={[
                 {
@@ -192,9 +192,9 @@ const Notification = () => {
               </Radio.Group>
             </Form.Item>
 
-            <h3 className='card_menu'>Notification </h3>
+            <h3 className={n.card_menu}>Notification </h3>
             <Row>
-            <Col className="select_option_col">
+            <Col className={n.select_option_col}>
             <Form.Item name="notification_id"
                 label={<lable style={{ fontSize: "15px" }}>Notification id</lable>}
                 rules={[
@@ -215,7 +215,7 @@ const Notification = () => {
             </Col>
 
 
-            <Col className="select_option_col">
+            <Col className={n.select_option_col}>
               <Form.Item
                   name="notification_date_time"
                   label={<label style={{ fontSize: "15px" }}>Notification Date/time</label>}
@@ -352,18 +352,19 @@ const Notification = () => {
             <div className='center'>
 
               <Row>
-                <Form.Item>
-                  <Button htmlType='submit'
-                    // disabled={!verfied}
-                    style={{
+              <Form.Item className="w-40 m-auto pb-4">
+                <button
+                      type="submit"
+                      // disabled={!verfied}
+                      style={{
+                        marginTop: "20px",
 
-                      marginTop: "20px",
-                      marginLeft: "50px",
-
-
-                    }}
-                    className="button"
-                  >Submit</Button>
+                        
+                      }}
+                      className="button m-auto w-40 bg-blue-400 rounded-lg p-2 text-white hover:text-white "
+                    >
+                      Submit
+                    </button>
                 </Form.Item>
               </Row>
             </div>

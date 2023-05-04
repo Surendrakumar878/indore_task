@@ -4,7 +4,7 @@ import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
 
-const Report2 = () => {
+const Overallcurrentbalances = () => {
     
         const conponentPDF= useRef();
         const [userData, setUserdata]= useState([]);
@@ -34,7 +34,7 @@ const Report2 = () => {
                       
                     
                    <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2 h-96 border-black ">
-                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Overall wallet summary: </div> 
+                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Overall current balances of users </div> 
                     <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
 
                     
@@ -45,12 +45,8 @@ const Report2 = () => {
                             <th className=" text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
                             <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">user id</th>
                             <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">username</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">refill date/time</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> refill amount</th>
-                            {/* <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">refill amount </th> */}
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">refilled by </th>
                             <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">current balance</th>
-                          
+                            
                             </tr> 
                         </thead>
                         <tbody>
@@ -60,11 +56,8 @@ const Report2 = () => {
                                 <td className="sm:px-2 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.user_id}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.username}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.refill_date_time}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.refill_amount}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.refilled_by}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{uData.current_balance}</td>
-                              
+                               
                                 <td>
                                     {/* <Link to="/userEdit" className="btn btn-success mx-2">Edit</Link>
                                     <Link to="/userDelete" className="btn btn-danger">Delete</Link> */}
@@ -92,4 +85,4 @@ const Report2 = () => {
   )
 }
 
-export default Report2
+export default Overallcurrentbalances
