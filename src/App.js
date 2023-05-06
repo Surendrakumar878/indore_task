@@ -23,6 +23,13 @@ import Singlepod from "./page/Singlepod";
 import PodRegister from "./page/PodRegister";
 import PodRegisterForm from "./page/PodRegisterForm";
 import Freight from "./page/Freight";
+import Overallcurrentbalances from "./page/Overallcurrentbalances";
+import Userdetails from "./page/Userdetails";
+import Vehiclebookingsummary from "./page/Vehiclebookingsummary";
+import Vehiclescheduledsummary from "./page/Vehiclescheduledsummary";
+import VehicleHireHistory from "./page/reports/VehicleHireHistory";
+import VehicleMasterInformation from "./page/reports/VehicleMasterInformation";
+import Vehicleschedulehistotry from "./page/reports/Vehicleschedulehistotry";
 
 
 function App() {
@@ -36,11 +43,11 @@ function App() {
         <Route path="/print" element={<Pdftoprint />}></Route>
         <Route path="/filter" element={<Filter />}></Route>
         <Route path="/loadingslip" element={<Loadingslip />}></Route>
-        {/* <Route path="/report1" element={<Report1 />}></Route>
-        <Route path="/report2" element={<Report2 />}></Route>
-        <Route path="/report3" element={<Report3 />}></Route>
-        <Route path="/report4" element={<Report4 />}></Route>
-        <Route path="/report5" element={<Report5 />}></Route> */}
+        <Route path="/report1" element={<Report1 />}></Route>
+        <Route path="/vehiclescheduledsummary" element={<Vehiclescheduledsummary />}></Route>
+        <Route path="/Vehiclebookingsummary" element={<Vehiclebookingsummary />}></Route>
+        <Route path="/Userdetails" element={<Userdetails />}></Route>
+        <Route path="/overallcurrentbalances" element={<Overallcurrentbalances />}></Route>
         <Route path="/promotion" element={<Promotion/>}></Route>
         <Route path="/notification" element={<Notification />}></Route>
         <Route path="/login" element={<Login />}></Route>
@@ -52,6 +59,9 @@ function App() {
         <Route path="/podRegister" element={<PodRegister />}></Route>
         <Route path="/podRegisterForm" element={<PodRegisterForm />}></Route>
         <Route path="/freight" element={<Freight />}></Route>
+        <Route path="/VehicleHireHistory" element={<VehicleHireHistory />}></Route>
+        <Route path="/VehicleMasterInformation" element={<VehicleMasterInformation />}></Route>
+        <Route path="/Vehicleschedulehistotry" element={<Vehicleschedulehistotry />}></Route>
       </Routes>
     </div>
   );

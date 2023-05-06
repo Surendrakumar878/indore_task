@@ -4,7 +4,7 @@ import axios from "axios";
 // npm install react-to-print (please install)
 import { useReactToPrint } from "react-to-print";
 
-const Freight = () => {
+const Vehicleschedulehistotry = () => {
     
         const conponentPDF= useRef();
         const [userData, setUserdata]= useState([1,3,4,4,4,4,4,4,4,4,4,4,4,4,4]);
@@ -34,7 +34,7 @@ const Freight = () => {
                       
                     
                    <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2  border-black ">
-                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> Freight Register</div> 
+                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> POD Register</div> 
                     <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
 
                     
@@ -43,16 +43,13 @@ const Freight = () => {
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
                             <th className=" text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Schedule no</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Schedule date</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver name</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver contact number</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver lisence no</th>
+                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle no </th>
 
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking id</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Booking number</th>
-                          
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle no </th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Goods</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">From </th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">To</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Rate / ton</th>
-                   
                             </tr>  
                         </thead>
                         <tbody>
@@ -67,9 +64,6 @@ const Freight = () => {
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
                                 <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                                <td className="sm:px-3 px-2 sm:text-base text-base border border-slate-300">{index+1}</td>
-                             
-                       
 
                             </tr>
                             )) }
@@ -82,8 +76,7 @@ const Freight = () => {
 </div>
 </div>
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
-</div>
-<div className="m-auto w-full text-center" >
+</div> <div className="m-auto w-full text-center" >
                     <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Download</button>  <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
                     </div> 
                     </div>
@@ -94,4 +87,4 @@ const Freight = () => {
   )
 }
 
-export default Freight
+export default Vehicleschedulehistotry

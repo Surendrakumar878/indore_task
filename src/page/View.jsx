@@ -1,10 +1,10 @@
 import React from 'react'
-
+// import Report from "react-data-report"
 const View = () => {
   return (
 
     <div className='w-[98%] m-auto'>
-
+{/* <Report data={"example"}/> */}
 <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">  Vehicle Demands </div> 
     <div className='lg:grid lg:grid-cols-5 lg:gap-5 grid grid-cols-2 gap-2 text-[8px] lg:text-xs sm:grid sm:grid-cols-2 sm:gap-4' >
 
