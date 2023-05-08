@@ -163,7 +163,7 @@ const Promotion = () => {
   
   return (
     <>
-      <h2 id={n.heading}>Promotion BY ADMIN</h2>
+      <h2 id={n.heading}>Promotion by Admin</h2>
       <div className='mainForm'>
         
         <Card hoverable bodyStyle={{ padding: "0" }} >
@@ -171,7 +171,7 @@ const Promotion = () => {
           <Form layout="vertical" autoComplete="off" onFinish={saveData} >
 
 
-            <h3 className={n.card_menu}>Promotion TYPE</h3>
+            <h3 className={n.card_menu}>Promotion Type</h3>
             <Form.Item name="type_id"
               rules={[
                 {
@@ -208,7 +208,7 @@ const Promotion = () => {
 
               >
                 {/* <Tooltip title="Enter Your Comapny Name"> */}
-                <Input placeholder='Promotion_id' tabIndex={1} />
+                <Input placeholder='Promotion' tabIndex={1} />
                 {/* </Tooltip> */}
 
               </Form.Item>
@@ -361,7 +361,7 @@ const Promotion = () => {
 
                         
                       }}
-                      className="button m-auto w-40 bg-blue-400 rounded-lg p-2 text-white hover:text-white "
+                      className="button m-auto w-40 bg-[#151B54] rounded-lg p-2 text-white hover:text-white "
                     >
                       Submit
                     </button>

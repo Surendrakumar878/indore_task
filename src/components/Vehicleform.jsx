@@ -129,7 +129,7 @@ const Vehicleform = () => {
                   hasFeedback
                 >
                   {/* <Tooltip title="Enter Your Comapny Name"> */}
-                  <Input placeholder="Enq no"  value="3223452" tabIndex={1} />
+                  <Input placeholder="3223452" disabled value="3223452" tabIndex={1} />
                   {/* </Tooltip> */}
                 </Form.Item></Col>
               <Col className={v.select_option_col}>
@@ -148,7 +148,7 @@ const Vehicleform = () => {
                   <DatePicker
                     className="w-full"
                     showTime
-                    placeholder="enq date"
+                    placeholder="Enq date"
                     onChange={onChange}
                     onOk={onOk}
                   />
@@ -253,7 +253,7 @@ const Vehicleform = () => {
                     <Select
                       showSearch
                       // onChange={getCityName}
-                      placeholder="vehicle body type"
+                      placeholder="Vehicle body type"
                       optionFilterProp="children"
                       tabIndex={4}
                     >
@@ -330,7 +330,7 @@ const Vehicleform = () => {
                       onKeyPress={handlePhoneKeyPress}
                       maxLength={7}
                       tabIndex={3}
-                      placeholder="Enter Your  Vehicle size "
+                      placeholder="  Vehicle size "
                     />
                     {/* </Tooltip> */}
                   </Form.Item>
@@ -376,33 +376,11 @@ const Vehicleform = () => {
                   </Form.Item>
                 </Col>
             
-               
-
-              
-              </Row>
-
-              {/* GOODS DETAILS */}
-              <h3 className={v.card_menu}> GOODS DETAILS</h3>
-            
-            <Row>
-            
-         
-
-           
-             
-
-            
-
-
-              
-            
-
-
-              <Col className={v.select_option_col}>
+                <Col className={v.select_option_col}>
                 <Form.Item
                   name="no_of_tyres"
                   label={
-                    <label style={{ fontSize: "15px" }}>no of tyres:</label>
+                    <label style={{ fontSize: "15px" }}>No of tyres:</label>
                   }
                   rules={[
                     {
@@ -428,11 +406,47 @@ const Vehicleform = () => {
                   style={{ width: "96%" }}
                 >
                   {/* <Tooltip title="Enter Your Website URL"> */}
-                  <Input placeholder="no of tyres" type="tel"
-                    onKeyPress={handlePhoneKeyPress} tabIndex={8} />
+                  {/* <Input placeholder="No of tyres" type="tel"
+                    onKeyPress={handlePhoneKeyPress} tabIndex={8} /> */}
                   {/* </Tooltip> */}
+
+                  <Select
+                      showSearch
+                      placeholder="No of tyres"
+                      optionFilterProp="children"
+                      style={{
+                        width: "100%",
+                      }}
+                      tabIndex={5}
+                    >
+                      {/* {city.map((items) => ( */}
+                        <Option value={1}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
                 </Form.Item>
               </Col>
+
+              
+              </Row>
+
+              {/* GOODS DETAILS */}
+              <h3 className={v.card_menu}> GOODS DETAILS</h3>
+            
+            <Row>
+            
+         
+
+           
+             
+
+            
+
+
+              
+            
+
+
+            
               <Col className={v.select_option_col}>
                 <Form.Item
                   name="from"
@@ -450,7 +464,21 @@ const Vehicleform = () => {
                   style={{ width: "96%" }}
                 >
                   {/* <Tooltip title="Enter Your Website URL"> */}
-                  <Input placeholder="From" tabIndex={9} />
+                  {/* <Input placeholder="From" tabIndex={9} /> */}
+
+                  <Select
+                      showSearch
+                      placeholder="From"
+                      optionFilterProp="children"
+                      style={{
+                        width: "100%",
+                      }}
+                      tabIndex={5}
+                    >
+                      {/* {city.map((items) => ( */}
+                        <Option value={"opton1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
                   {/* </Tooltip> */}
                 </Form.Item>
               </Col>
@@ -471,7 +499,20 @@ const Vehicleform = () => {
                   style={{ width: "96%" }}
                 >
                   {/* <Tooltip title="Enter Your Website URL"> */}
-                  <Input placeholder="To" tabIndex={10} />
+                  {/* <Input placeholder="To" tabIndex={10} /> */}
+                  <Select
+                      showSearch
+                      placeholder="To"
+                      optionFilterProp="children"
+                      style={{
+                        width: "100%",
+                      }}
+                      tabIndex={5}
+                    >
+                      {/* {city.map((items) => ( */}
+                        <Option value={"opton1"}>{"opton1"}</Option>
+                      {/* ))} */}
+                    </Select>
                   {/* </Tooltip> */}
                 </Form.Item>
               </Col>
@@ -558,7 +599,7 @@ const Vehicleform = () => {
 
                         
                       }}
-                      className="button m-auto w-40 bg-blue-400 rounded-lg p-2 text-white hover:text-white "
+                      className="button m-auto w-40 bg-[#151B54] rounded-lg p-2 text-white hover:text-white "
                     >
                       Submit
                     </button>

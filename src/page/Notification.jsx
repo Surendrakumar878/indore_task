@@ -163,7 +163,7 @@ const Notification = () => {
   
   return (
     <>
-      <h2 id={n.heading}>Notification BY ADMIN</h2>
+      <h2 id={n.heading}>Notification By Admin</h2>
       <div className='mainForm'>
         
         <Card hoverable bodyStyle={{ padding: "0" }} >
@@ -171,7 +171,7 @@ const Notification = () => {
           <Form layout="vertical" autoComplete="off" onFinish={saveData} >
 
 
-            <h3 className={n.card_menu}>Notification TYPE</h3>
+            <h3 className={n.card_menu}>Notification Type</h3>
             <Form.Item name="type_id"
               rules={[
                 {
@@ -184,10 +184,10 @@ const Notification = () => {
               hasFeedback
             >
               <Radio.Group style={{ paddingLeft: "20px" }}>
-                <Radio value="3" style={{ fontSize: "18px" }}>Company </Radio>
+                <Radio value="1" style={{ fontSize: "18px" }}>Company </Radio>
                 <Radio value="2" style={{ fontSize: "18px" }}>Transporter </Radio>
-                <Radio value="4" style={{ fontSize: "18px" }}>Reseller</Radio>
-                <Radio value="5" style={{ fontSize: "18px" }}>All</Radio>
+                <Radio value="3" style={{ fontSize: "18px" }}>Reseller</Radio>
+                <Radio value="4" style={{ fontSize: "18px" }}>All</Radio>
 
               </Radio.Group>
             </Form.Item>
@@ -208,7 +208,7 @@ const Notification = () => {
 
               >
                 {/* <Tooltip title="Enter Your Comapny Name"> */}
-                <Input placeholder='notification_id' tabIndex={1} />
+                <Input placeholder='notification' tabIndex={1} />
                 {/* </Tooltip> */}
 
               </Form.Item>
@@ -361,7 +361,7 @@ const Notification = () => {
 
                         
                       }}
-                      className="button m-auto w-40 bg-blue-400 rounded-lg p-2 text-white hover:text-white "
+                      className="button m-auto w-40 bg-[#151B54] rounded-lg p-2 text-white hover:text-white "
                     >
                       Submit
                     </button>
