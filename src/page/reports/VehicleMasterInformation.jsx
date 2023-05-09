@@ -5,7 +5,17 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 
 const VehicleMasterInformation = () => {
-    
+    const [data,setDate]=useState({
+        name:"ram transport",
+        email:"email@gmail.com",
+        mobilenumber:7222082282,
+        address:"106,Near Pani Pouch Factory,Opp.Star Steel,BHOPAL,MP",
+        reportname:"Vehicle Master Information",
+        date:"4/20/2023",
+        date_From : "4/20/2023" ,
+        to : "4/20/2023"
+
+    })
         const conponentPDF= useRef();
         const [userData, setUserdata]= useState([1,3,4,4,4,4,4,4,4,4,4,4,4,4,4]);
       
@@ -37,23 +47,39 @@ const VehicleMasterInformation = () => {
                     <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full"> Vehicle Master Information</div> 
                     <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
 
-                    
+                    <div>
+                <h1 className=" pl-1 font-bold text-base text-[10px]"> {data.name}</h1>
+                <h1 className=" pl-1 font-bold text-base text-[10px]"> {data.email} </h1>
+                <span className="pl-1 text-[10px] ">{data.mobilenumber} </span>
+                <p className="pl-1 text-[10px]">{data.address}</p>
+                <p className="pl-1 text-[10px]">{data.reportname}</p>
+                <h2 className="pl-1 font-bold text-base text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
+                  Date : 
+                  {data.date}
+                </h2>
+                {/* <h1 className="font-bold text-base border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0 ">
+                  BOOKING STATION : BHOPAL
+                </h1> */}
+                <h1 className="pl-1 font-bold text-base text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
+                  Date From : {data.date_From}To :{data.to}
+                </h1>
+                </div>
                  
                     <table className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className=" text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Vehicle no</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner name</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle size</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Vehicle type</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle capacity</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle body type </th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle height </th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">no of tyres</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner contact no</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner pan no</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner adhar no</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Vehicle no</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Name</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Size</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Vehicle Type</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Capacity</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Body type </th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Height </th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">No of Tyres</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Contact no</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Pan no</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Owner Adhar no</th>
                          
                             </tr>  
                         </thead>

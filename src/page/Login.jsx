@@ -1,6 +1,11 @@
 import React from 'react'
 import { AiTwotonePhone } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+const navigate=useNavigate()
+  const onclick=()=>{
+navigate("/")
+  }
   return (
     <div className='mt-28'>
       <form className="bg-[#151B54] w-72 m-auto my-10 shadow-md rounded px-8 pt-6 pb-8 ">
@@ -38,6 +43,7 @@ const Login = () => {
   </div>
 </form>
 
+<div className='text-center '> <button onClick={()=>onclick()} > go back</button> </div>
     </div>
   )
 }

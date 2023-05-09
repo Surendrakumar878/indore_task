@@ -5,7 +5,17 @@ import axios from "axios";
 import { useReactToPrint } from "react-to-print";
 
 const Vehiclebookingsummary= () => {
-    
+    const [data,setDate]=useState({
+        name:"ram transport",
+        email:"email@gmail.com",
+        mobilenumber:7222082282,
+        address:"106,Near Pani Pouch Factory,Opp.Star Steel,BHOPAL,MP",
+        reportname:"Vehicle Booking Summary",
+        date:"4/20/2023",
+        date_From : "4/20/2023" ,
+        to : "4/20/2023"
+
+    })
         const conponentPDF= useRef();
         const [userData, setUserdata]= useState([]);
       
@@ -34,26 +44,42 @@ const Vehiclebookingsummary= () => {
                       
                     
                    <div ref={conponentPDF}  className=" relative sm:w-full sm:m-auto w-full  bordre border-collapse border-2 h-96 border-black ">
-                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">   Vehicle booking summary </div> 
+                    <div className="mt-2 bg-[#151B54] mb-4 text-center text-fuchsia-50 w-full">   Vehicle Booking Summary </div> 
                     <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
 
                     
-                 
+                    <div>
+                <h1 className=" pl-1 font-bold text-base text-[10px]"> {data.name}</h1>
+                <h1 className=" pl-1 font-bold text-base text-[10px]"> {data.email} </h1>
+                <span className="pl-1 text-[10px] ">{data.mobilenumber} </span>
+                <p className="pl-1 text-[10px]">{data.address}</p>
+                <p className="pl-1 text-[10px]">{data.reportname}</p>
+                <h2 className="pl-1 font-bold text-base text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
+                  Date : 
+                  {data.date}
+                </h2>
+                {/* <h1 className="font-bold text-base border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0 ">
+                  BOOKING STATION : BHOPAL
+                </h1> */}
+                <h1 className="pl-1 font-bold text-base text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
+                  Date From : {data.date_From}To :{data.to}
+                </h1>
+                </div>
                     <table className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className=" text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">booking  date/time</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">user id</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> username</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">registerd no</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle no booked</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle owner id </th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">vehicle owner name </th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">freight</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">booking  Date/Time</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">User Id</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">User Name</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Registerd No</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle No Booked</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle owner Id </th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle Owner Name </th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Freight</th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">From Station </th>
+                            <th className=" lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">To Station</th>
                             {/* <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Registration date</th> */}
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">from station </th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">to station</th>
                       
                             </tr> 
                         </thead>
@@ -81,7 +107,7 @@ const Vehiclebookingsummary= () => {
                             )) }
                         </tbody>                        
                     </table>         
-                    <div className="absolute top-40 w-96 left-96 opacity-10">
+                    <div className="absolute top-60 w-96 left-96 opacity-10">
 
 <img className="w-full" src="transduniyalogo.png" alt="" />
 
@@ -89,8 +115,8 @@ const Vehiclebookingsummary= () => {
 <h1 className="text-end text-xs">Powered by : www.transduniya.com-97553-22022 </h1>
 </div>
 </div>
-                    <div className="d-grid d-md-flex justify-content-md-end mb-3" >
-                    <button className="btn btn-success bg-blue-400 py-3 px-2 w-28 text-xl mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
+<div className="m-auto w-full text-center" >
+                    <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Download</button>  <button className="btn btn-success bg-[#151B54] py-2 px-2 w-32 text-base mt-10 rounded-lg text-white " onClick={ generatePDF}>Print</button>                       
                     </div> 
                     </div>
                 </div>

@@ -6,6 +6,18 @@ import { useReactToPrint } from "react-to-print";
 
 const Vehicleschedulehistotry = () => {
     
+
+    const [data,setDate]=useState({
+        name:"ram transport",
+        email:"email@gmail.com",
+        mobilenumber:7222082282,
+        address:"106,Near Pani Pouch Factory,Opp.Star Steel,BHOPAL,MP",
+        reportname:"Vehicle Schedule Histotry",
+        date:"4/20/2023",
+        date_From : "4/20/2023" ,
+        to : "4/20/2023"
+
+    })
         const conponentPDF= useRef();
         const [userData, setUserdata]= useState([1,3,4,4,4,4,4,4,4,4,4,4,4,4,4]);
       
@@ -38,17 +50,33 @@ const Vehicleschedulehistotry = () => {
                     <div className=" bordre border-collapse border-2  border-slate-700 pb-2">
 
                     
-                 
+                    <div>
+                <h1 className=" pl-1 font-bold text-base text-[10px]"> {data.name}</h1>
+                <h1 className=" pl-1 font-bold text-base text-[10px]"> {data.email} </h1>
+                <span className="pl-1 text-[10px] ">{data.mobilenumber} </span>
+                <p className="pl-1 text-[10px]">{data.address}</p>
+                <p className="pl-1 text-[10px]">{data.reportname}</p>
+                <h2 className="pl-1 font-bold text-base text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
+                  Date : 
+                  {data.date}
+                </h2>
+                {/* <h1 className="font-bold text-base border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0 ">
+                  BOOKING STATION : BHOPAL
+                </h1> */}
+                <h1 className="pl-1 font-bold text-base text-[10px] border border-t-2  border-slate-700 border-b-0 border-r-0 border-l-0">
+                  Date From : {data.date_From}To :{data.to}
+                </h1>
+                </div>
                     <table className=" w-full " >
                         <thead className="bg-[#151B54] w-full text-white">
                            <tr>
-                            <th className=" text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Schedule no</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Schedule date</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver name</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver contact number</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver lisence no</th>
-                            <th className=" text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle no </th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-2 px-1 lg:p-1 sm:text-base  border border-slate-300">Sr. No</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300"> Schedule No</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Schedule Date</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver Name</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver Contact Number</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Driver Lisence No</th>
+                            <th className="lg:text-[10px] text-[0.41rem] p-0 sm:px-3 px-1 lg:p-1 sm:text-base  border border-slate-300">Vehicle No </th>
 
                             </tr>  
                         </thead>
@@ -69,7 +97,7 @@ const Vehicleschedulehistotry = () => {
                             )) }
                         </tbody>                        
                     </table>         
-                    <div className="absolute top-40 w-96 left-96 opacity-10">
+                    <div className="absolute top-80 w-96 left-96 opacity-10">
 
 <img className="w-full" src="transduniyalogo.png" alt="" />
 
